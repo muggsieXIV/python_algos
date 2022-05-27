@@ -25,13 +25,6 @@ def obj_search(criteria, collection):
     for i in range(0, len(collection)):
         match = True
         for key in criteria.keys():
-            # print('===key===')
-            # print(key)
-            # print('=== collection eval ===')
-            # print(collection[i].get(key))
-            # print('=== criteria eval ===')
-            # print(criteria.get(key))
-            
             if collection[i].get(key) == None or collection[i].get(key) != criteria.get(key):
                 match = False
             if collection[i].get(key) == criteria.get(key):
