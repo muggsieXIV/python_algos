@@ -5,7 +5,6 @@
 #     Bonus: Make it O(n) time
 # */
 
-
 def two_sum(arr, target):
     new_arr = []
     for i in range(0, len(arr)):
@@ -14,6 +13,5 @@ def two_sum(arr, target):
                 new_arr.append([arr[i], arr[x]])
 
     return new_arr
-
 
 print(two_sum([2,4,5,7,10], 12))

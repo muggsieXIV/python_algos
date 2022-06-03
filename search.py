@@ -48,5 +48,14 @@ search_que = {
     'age': 31,
 }
 
-print(obj_search(search_que, dict))
+search_que_two = {
+    'first_name': "Bob",
+}
 
+search_que_three = {
+    'last_name': "Smith",
+}
+
+print(obj_search(search_que, dict))
+print(obj_search(search_que_two, dict))
+print(obj_search(search_que_three, dict))
