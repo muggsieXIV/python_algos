@@ -2,27 +2,41 @@
 # “aaaa”, “aaa” => False
 # “abbb”, “aaab” => False
 
-# Implementing to support test cases. 
-# def getDict(str):
-#     dic = dict()
-#     for char in str:
-#         if char in dic:
-#             return False
-#         if char not in dic:
-#             dic[char] = char
-#             return dic
-#     return dic
+
+# # Fails some test cases 
+# def enaigram(str, str2):
+#     # sort the string 
+#     sorted_str = sorted(str)
+#     sorted_str2 = sorted(str2)
+
+#     # If strings match, then true, else false
+#     if sorted_str == sorted_str2:
+#         return True
+#     else:
+#         return False
+
 
 def enaigram(str, str2):
-    # sort the string 
-    sorted_str = sorted(str)
-    sorted_str2 = sorted(str2)
+    dic1 = dict()
+    dic2 = dict()
+    # Create dictionary 
 
-    # If strings match, then true, else false
-    if sorted_str == sorted_str2:
-        return True
-    else:
-        return False
+    for char in str:
+        if char not in dic1:
+            dic1[char] = 0 
+        else:
+            dic1[char] += 1
+
+    for char in str2:
+        if char not in dic2:
+            dic2[char] = 0 
+        else:
+            dic2[char] += 1
+
+    if dic1 == dic2: 
+        return True 
+    else: return False 
+
 
 print(enaigram('abcde', 'edcba'))
 print(enaigram('aaaa', 'aaa'))

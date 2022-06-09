@@ -8,12 +8,13 @@
 # should return
 # [1,2]
 
-from typing import OrderedDict
-
 
 def kMostFrequent(array, k):
+
+    if len(array) <= k:
+        return "You must have at least the same number of elements in the array as your k(" + str(k) + ") request amount"
+
     arr = sorted(array)
-    print(arr)
     new_arr = []
     
     dic = dict()
@@ -24,14 +25,13 @@ def kMostFrequent(array, k):
         if arr[i] in dic:
             dic[arr[i]] += 1
 
-    print(dic)
-
     new_arr = sorted(dic, key=dic.get, reverse=True)
     if len(new_arr) > k:
         new_arr = new_arr[0:k]
 
-    print(new_arr)
-
     return new_arr
 
 print(kMostFrequent([1,2,4,4,4,4,3,7,7,7,7,1,5,5,2,2,2,2,2,5,5,5,5,5], 1))
+print(kMostFrequent([1,2,3,1,5,2], 2))
+print(kMostFrequent([1,2,3,-11,5,12,-1,3,2], 2))
+print(kMostFrequent([1], 2))
