@@ -49,4 +49,5 @@ def diagonal_difference(matrix):
 
     return dgnl_diff
 
+
 print(diagonal_difference([3,2,12,4,5,6,7,10,4]))
