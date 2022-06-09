@@ -16,7 +16,7 @@
 #         return False
 
 
-def enaigram(str, str2):
+def eniagram(str, str2):
     dic1 = dict()
     dic2 = dict()
     # Create dictionary 
@@ -38,6 +38,6 @@ def enaigram(str, str2):
     else: return False 
 
 
-print(enaigram('abcde', 'edcba'))
-print(enaigram('aaaa', 'aaa'))
-print(enaigram('abbb', 'aaab'))
+print(eniagram('abcde', 'edcba'))
+print(eniagram('aaaa', 'aaa'))
+print(eniagram('abbb', 'aaab'))
