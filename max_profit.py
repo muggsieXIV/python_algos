@@ -16,20 +16,31 @@
 # k = 2 
 
 # Expected output 
-# 93  ## [Buy: 3, Sell: 11, Buy 3, sell: 90]
+# 93  ## [Buy: 5, Sell: 11, Buy 3, sell: 90]
 
 
 def maxProfitWithTransactions(prices, k):
+    profit = None 
+    transaction = None
+
     if not len(prices):
-        return 0 
-    profits = [[0 for d in prices] for t in range(k + 1)]
+        return 0   
+    
+    for i in range(0, len(prices)):
+        eval = prices[i]
 
-    for t in range(1, k + 1):
-        maxThusFar = float("-inf")
-        for d in range(1, len(prices)):
-            maxThusFar = max(maxThusFar, profits[t - 1][d - 1] - prices[d - 1])
-            profits[t][d] = max(profits[t][d - 1], maxThusFar + prices[d])
-        return profits[-1][-1]
+        for j in range(0, len(prices)):
+            if i != j:
+                if i < j:
+                    transaction = prices[j] - eval
+                if i > j:
+                    transaction = eval - prices[j]
+                if not profit:
+                    profit = transaction
+                if profit:
+                    if profit < transaction:
+                        profit += transaction 
+    print(profit)
+    return profit
 
-
-print(maxProfitWithTransactions([5, 11, 3, 50, 60, 90], 2))
+maxProfitWithTransactions([5, 11, 3, 50, 60, 90], 2)

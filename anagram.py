@@ -4,7 +4,7 @@
 
 
 # # Fails some test cases 
-# def enaigram(str, str2):
+# def enneagram(str, str2):
 #     # sort the string 
 #     sorted_str = sorted(str)
 #     sorted_str2 = sorted(str2)
@@ -16,7 +16,7 @@
 #         return False
 
 
-def eniagram(str, str2):
+def anagram(str, str2):
     dic1 = dict()
     dic2 = dict()
     # Create dictionary 
@@ -38,6 +38,6 @@ def eniagram(str, str2):
     else: return False 
 
 
-print(eniagram('abcde', 'edcba'))
-print(eniagram('aaaa', 'aaa'))
-print(eniagram('abbb', 'aaab'))
+print(anagram('abcde', 'edcba'))
+print(anagram('aaaa', 'aaa'))
+print(anagram('abbb', 'aaab'))
