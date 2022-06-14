@@ -23,24 +23,19 @@ def unionSortedArrays(arr, arr2):
         if eval not in union:
             count = 0
             
+            # Find duplicate counts
             for j in range(0, len(new_arr)):
                 if new_arr[j] == eval:
                     count += 1
-                    print('eval: ' + str(eval) + ', count: ' + str(count) + ', occurences: ' + str(occurences))
 
             if count == occurences:
                 union.append(eval)
-            
+
             if count > occurences:
                 occurences = count 
                 union = []
                 union.append(eval)
 
-
-    print(arr)
-    print(arr2)
-    print(new_arr)
-    print(union)
     return union 
 
 unionSortedArrays([2, 4, 6, 5, 5, 5, 10, 14], [4, 4, 6, 10, 14, 14])
